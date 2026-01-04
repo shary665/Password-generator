@@ -1,0 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    align-content: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #444;
+}
+.main{
+    margin: 0 auto;
+    height: 500px;
+    width: 30%;
+    background-color: rgb(13, 30, 44);
+    border-radius: 20px;
+    color: white;
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.first-div{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.first-div h2{
+    font-size: 40px;
+    /* margin-bottom: 20px; */
+    line-height: 0.8;
+}
+.first-div h3{
+    font-size: 40px;
+    /* margin-bottom: 20px; */
+    color: rgb(96, 212, 96);
+}
+
+.first-div p{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+ 
+}
+
+.first-div button{
+    padding: 10px 30px;
+    font-size: 18px;
+    background-color: rgb(96, 212, 96);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #444;
+    margin-top: 40px;
+}
+.second-div{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-div h6{
+    padding: 8px 30px;
+    background-color: #444;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(96, 212, 96);
+}
+
+.CopytheText{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+#line {
+width: 100%;
+border-bottom: 1px solid #ccc;
+margin-bottom: 50px;
+
+
+}
