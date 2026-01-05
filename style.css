@@ -15,12 +15,12 @@
 }
 .main{
     margin: 0 auto;
-    height: 500px;
+    max-height: 700px;
     width: 30%;
     background-color: rgb(13, 30, 44);
     border-radius: 20px;
     color: white;
-    padding: 0px 40px;
+    padding: 40px 40px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -87,11 +87,71 @@
     width: 100%;
     font-size: 20px;
 }
+.input-field-chars{
+    margin-top: 20px;
+}
+
+.input-field-chars label{
+ font-size: 18px;
+ font-weight: 700;
+ margin-right: 10px;
+}
+
+.input-field-chars input{
+    width: 200px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.types-in-pass{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.types-in-pass input[type= "checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    /* color: rgb(96, 212, 96); */
+    border-radius: 5px;
+    cursor: pointer;
+     display: flex;
+   justify-content: center;
+   align-items: center;
+    transition: all 0.2s ease;
+}
+
+.types-in-pass input[type = "checkbox"]::after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    font-weight: bolder;
+    font-size: 17px;
+    color: white;
+    display: none;
+}
+
+.types-in-pass input[type = "checkbox"]:hover{
+ background-color: rgb(161, 159, 159);
+}
+
+.types-in-pass input[type = "checkbox"]:checked{
+    background-color: rgb(96, 212, 96);
+}
+
+.types-in-pass input[type = "checkbox"]:checked::after{
+    display: block;
+}
 
 #line {
 width: 100%;
 border-bottom: 1px solid #ccc;
 margin-bottom: 50px;
-
-
 }

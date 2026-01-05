@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="main">
-           <div class="first-div">
-             <h2>Generate a</h2>
-            <h3>Random Password</h3>
-            <p>Never use a insecure password</p>
-            <button id="pass-Gen-btn">Generate Password</button>
-           </div>
-            <p id="line"></p>
-           <div class="second-div">
-             <h6 id="first-field" onclick="CopyToClipboardFirst()">***************</h6>
-             <h6 id="second-field" onclick="CopyToClipboardSec()">***************</h6>
-           </div>
-           <div class="CopytheText">
-            <h4>Click to Copy</h4>
-           </div>
+      <div class="main">
+        <div class="first-div">
+          <h2>Generate a</h2>
+          <h3>Random Password</h3>
+          <p>Never use a insecure password</p>
+          <button id="pass-Gen-btn">Generate Password</button>
         </div>
+        <p id="line"></p>
+        <div class="second-div">
+          <h6 id="first-field" onclick="CopyToClipboardFirst()">
+            ***************
+          </h6>
+          <h6 id="second-field" onclick="CopyToClipboardSec()">
+            ***************
+          </h6>
+        </div>
+        <div class="CopytheText">
+          <h4>Click to Copy</h4>
+        </div>
+        <form class="input-field-chars">
+          <label for="max-chars">Number of Characters:</label>
+          <input
+            type="number"
+            id="max-chars"
+            name="password"
+            placeholder="Total Characters"
+            min="1"
+            max="15"
+          />
+        </form>
+        <div class="types-in-pass">
+          <input type="checkbox" id="uppercase" checked/>
+          <label for="uppercase">Uppercase</label>
+          <input type="checkbox" id="lowercase" checked/>
+          <label for="lowercase">Lowercase</label>
+          <input type="checkbox" id="numbers" checked/>
+          <label for="numbers">Numbers</label>
+          <input type="checkbox" id="symbols" checked/>
+          <label for="symbols">Symbols</label>
+        </div>
+      </div>
     </div>
-</body>
-    <script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
 </html>

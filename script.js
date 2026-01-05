@@ -193,28 +193,78 @@ const symbols = [
   "/"
 ]
 
-let passwordCharObj = {
- smallAlphabets : smallAlphabets,
- largeAlphabetts : largeAlphabetts,
- numbers : numbers,
- symbols : symbols 
-}
+
+let passwordCharArray = [
+ smallAlphabets,
+ largeAlphabetts,
+  numbers,
+  symbols 
+]
 
 let PassGenButton = document.getElementById("pass-Gen-btn");
 let FirstField = document.getElementById("first-field");
 let SecondField = document.getElementById("second-field");
+let UpperCASE = document.getElementById("uppercase");
+let LowerCase = document.getElementById("lowercase");
+let Numbers = document.getElementById("numbers");
+let Symbols = document.getElementById("symbols");
+let MaxCharsField = document.getElementById("max-chars");
+
+
 let isGenrated = false;
+
+  
+  let smallAlphabetsIndex = 0;
+  let LargeAlphabetsIndex = 1;
+  let NumbersIndex = 2;
+  let SymbolsIndex = 3;
+ 
 
 PassGenButton.addEventListener("click", function () {
   let firstPass = "";
   let secPass = "";
-  for (let i = 0; i < 15; i++) {
-    firstPass +=
-      passwordChars[Math.floor(Math.random() * passwordChars.length)];
+  let Totalchars = MaxCharsField.value;
+  
+  if(LowerCase.checked === false && passwordCharArray[smallAlphabetsIndex] == smallAlphabets){
+     passwordCharArray.splice(smallAlphabetsIndex, 1);  
+  }else if(LowerCase.checked === true && passwordCharArray[smallAlphabetsIndex] != smallAlphabets){
+    passwordCharArray.splice(smallAlphabetsIndex, 0, smallAlphabets);
   }
-  for (let i = 0; i < 15; i++) {
-    secPass += passwordChars[Math.floor(Math.random() * passwordChars.length)];
+ 
+    if(UpperCASE.checked === false && passwordCharArray[LargeAlphabetsIndex] == largeAlphabetts){
+     passwordCharArray.splice(LargeAlphabetsIndex, 1);  
+  } else if(UpperCASE.checked === true && passwordCharArray[LargeAlphabetsIndex] != largeAlphabetts){
+    passwordCharArray.splice(LargeAlphabetsIndex, 0, largeAlphabetts);
   }
+
+  if(Numbers.checked === false && passwordCharArray[NumbersIndex] == numbers){
+     passwordCharArray.splice(NumbersIndex, 1);  
+  }else if(Numbers.checked === true && passwordCharArray[NumbersIndex] != numbers){
+    passwordCharArray.splice(NumbersIndex, 0, numbers);
+  }
+
+  if(Symbols.checked === false && passwordCharArray[SymbolsIndex] == symbols){
+     passwordCharArray.splice(SymbolsIndex, 1);  
+  }else if(Symbols.checked === true && passwordCharArray[SymbolsIndex] != symbols){
+    passwordCharArray.splice(SymbolsIndex, 0, symbols);
+  }
+
+  if(Totalchars <= 0 || Totalchars > 15){
+    Totalchars = 15
+    MaxCharsField.value = 15;
+  }
+  
+  for (let i = 0; i < Totalchars; i++) {
+    let orderofchars = Math.floor(Math.random() * passwordCharArray.length);
+    firstPass +=   passwordCharArray[orderofchars][Math.floor(Math.random() * passwordCharArray[orderofchars].length)];
+      
+  }
+
+  for (let i = 0; i < Totalchars; i++) {
+    let orderofchars = Math.floor(Math.random() * passwordCharArray.length);
+    secPass += passwordCharArray[orderofchars][Math.floor(Math.random() * passwordCharArray[orderofchars].length)];
+  }
+
   FirstField.innerText = firstPass;
   SecondField.innerText = secPass;
   isGenrated = true;
